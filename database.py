@@ -15,10 +15,10 @@ print(createTime)
 try:
     conn = pymysql.connect(host=host, user=user, db=db, passwd=passwd)
     cursor = conn.cursor()
-    print('数据库连接成功！')
+    print('connection success！')
     print(' ')
 except:
-    print('数据库连接失败！')
+    print('connection is failed！')
 path = os.getcwd()
 print(path)
 
@@ -65,9 +65,8 @@ def update_with_rollback(name, id):
         conn.rollback()
 
 
-if __name__ == '__main__':
-    insert()
-    select_all()
-    select_by_name("ahian")
-    update_by_id("zhangsan", 3)
-    update_with_rollback("ahian", 3)
+insert()
+select_all()
+select_by_name("ahian")
+update_by_id("zhangsan", 3)
+update_with_rollback("ahian", 3)
